@@ -15,7 +15,6 @@ void getMissingNum(int* arr){   // assume 1 to 100
 }
 
 void findNumOfPairs(){
-
     /*
      *  To find the number of pairs where elem[i] != elem[j] we first count the total number of pairs using the formula n(n+1)/2
      *  However, we input n = n-1 into the formula since elems cannot pair with themselves.
@@ -62,3 +61,40 @@ void findNumOfPairs(){
 
     cout<<pairs<<endl;
 }
+
+void findNumOfOpsForPalindrome(vector<int> arr){
+    /*
+     *  a hashmap maps each elem in arr to a value. At first each elem is mapped to its original value, but as 
+     *  transformations take place, each elem will be mapped to a new value
+     *  comparisons are done only with the mapped values not the actual value of the elems
+     *  if the mapped values do not match, change the right elems value to that of the left and increase number of ops
+     */
+
+    unordered_map<int,int> hMap;
+    int numOfOps=0;
+    int size=arr.size()-1;
+
+    for(int i=0;i<arr.size()/2;i++){                    // compare pairs eg in 1 2 3 4, 1 and 4 will be compared, 2 and 3, etc
+        // if hMap does not contain key elem, add it
+        if(!hMap.contains(arr[i]))
+            hMap[arr[i]]=arr[i];
+        if(!hMap.contains(arr[size-i]))
+            hMap[arr[size-i]]=arr[size-i];
+
+        // if the mapped values do not match, set the right mapped value to that of the left
+        if(hMap[arr[i]] != hMap[arr[size-i]]){
+            hMap[arr[size-i]]=hMap[arr[i]];
+            numOfOps++;         // increase number of operations done
+        }
+    }
+
+    cout<<numOfOps<<endl;
+}
+
+
+
+
+
+
+
+

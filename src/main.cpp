@@ -2,6 +2,7 @@
 #include "ArrayQuestions.h"
 
 int main(){
+    /*
     LinkedList list;
 
     list.add(9);
@@ -36,6 +37,16 @@ int main(){
     };
 
     getMissingNum(arr);
+    */
+
+    int n,temp;
+    vector<int> arr;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>temp;
+        arr.push_back(temp);
+    }
+    findNumOfOpsForPalindrome(arr);
 
     return 0;
 }
