@@ -30,7 +30,8 @@ public:
     void preOrder(TNode* node); // root, left, right
     void inOrder(TNode* node);  // left, root, right
 
-    int depth(TNode* node);
+    int depth(TNode* node); // returns max depth
+    int breadth();          // returns max breadth
 
     TNode* getRoot();
 };

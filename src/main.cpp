@@ -66,7 +66,8 @@ int main()
     cout << endl
          << endl;
     //tree.inOrder(tree.getRoot());
-    cout << to_string(tree.depth(tree.getRoot())) << endl;
+    //cout << to_string(tree.depth(tree.getRoot())) << endl;
+    cout << "breadth: " << to_string(tree.breadth()) << endl;
 
     return 0;
 }
