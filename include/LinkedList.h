@@ -1,23 +1,24 @@
 #include "include.h"
 
-struct Node{
+struct Node {
     int elem;
     Node* next;
 };
 
-class LinkedList{
-    private:
-        Node* head;
-        int size;
-    public:
-        LinkedList();
-        ~LinkedList();
+class LinkedList {
+private:
+    Node* head;
+    int size;
 
-        void add(int elem);
-        void displayList();
+public:
+    LinkedList();
+    ~LinkedList();
 
-        void reverse();     // reverse a linked list
+    void add(int elem);
+    void displayList();
 
-        Node* getHead();
-        int getSize();
+    void reverse(); // reverse a linked list
+
+    Node* getHead();
+    int getSize();
 };

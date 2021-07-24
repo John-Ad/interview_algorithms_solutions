@@ -1,7 +1,14 @@
-#include "LinkedList.h"
 #include "ArrayQuestions.h"
+#include "LinkedList.h"
+#include "Trees.h"
+#include <chrono>
+#include <ctime>
+#include <string>
 
-int main(){
+using namespace std::chrono;
+
+int main()
+{
     /*
     LinkedList list;
 
@@ -37,7 +44,6 @@ int main(){
     };
 
     getMissingNum(arr);
-    */
 
     int n,temp;
     vector<int> arr;
@@ -47,6 +53,20 @@ int main(){
         arr.push_back(temp);
     }
     findNumOfOpsForPalindrome(arr);
+
+    auto before=duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+    findNumOfPairsBetweenTwoNums(4,10);
+    auto after=duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+    cout<<"run time: "<<(after-before)<<endl;
+    */
+
+    int arr[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+    Tree tree(arr, 15);
+    tree.preOrder(tree.getRoot());
+    cout << endl
+         << endl;
+    //tree.inOrder(tree.getRoot());
+    cout << to_string(tree.depth(tree.getRoot())) << endl;
 
     return 0;
 }
