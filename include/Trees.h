@@ -27,9 +27,10 @@ public:
     Tree(int* arr, int n);
     void populateLevelOrder(int* arr, int n);
 
-    void preOrder(TNode* node); // root, left, right
-    void inOrder(TNode* node);  // left, root, right
-    void breadthFirst();        // level by level starting at root
+    void preOrder(TNode* node);  // root, left, right
+    void inOrder(TNode* node);   // left, root, right
+    void postOrder(TNode* node); // left, right, root
+    void breadthFirst();         // level by level starting at root
 
     int depth(TNode* node); // returns max depth
     int breadth();          // returns max breadth

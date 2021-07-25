@@ -62,10 +62,11 @@ int main()
 
     int arr[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
     Tree tree(arr, 7);
-    tree.preOrder(tree.getRoot());
     cout << endl
          << endl;
-    tree.breadthFirst();
+    //tree.preOrder(tree.getRoot());
+    //tree.breadthFirst();
+    tree.postOrder(tree.getRoot());
     //tree.inOrder(tree.getRoot());
     //cout << to_string(tree.depth(tree.getRoot())) << endl;
     //cout << "breadth: " << to_string(tree.breadth()) << endl

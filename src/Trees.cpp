@@ -62,6 +62,15 @@ void Tree::inOrder(TNode* node)
     cout << node->elem << endl;
     inOrder(node->right);
 }
+void Tree::postOrder(TNode* node)
+{
+    if (node == NULL)
+        return;
+
+    postOrder(node->left);
+    postOrder(node->right);
+    cout << node->elem << endl;
+}
 void Tree::breadthFirst()
 {
     vector<TNode*> arr;
