@@ -62,6 +62,26 @@ void Tree::inOrder(TNode* node)
     cout << node->elem << endl;
     inOrder(node->right);
 }
+void Tree::breadthFirst()
+{
+    vector<TNode*> arr;
+    TNode* currNode;
+
+    arr.push_back(root);
+
+    while (arr.size() > 0) {
+        currNode = arr[0]; // get front of array
+
+        cout << currNode->elem << endl;
+
+        if (currNode->left != NULL)
+            arr.push_back(currNode->left); // push to back of array
+        if (currNode->right != NULL)
+            arr.push_back(currNode->right);
+
+        arr.erase(arr.begin()); // remove from front of array
+    }
+}
 
 int Tree::depth(TNode* node) // each level in tree adds 1
 {
