@@ -35,5 +35,7 @@ public:
     int depth(TNode* node); // returns max depth
     int breadth();          // returns max breadth
 
+    bool isIdentical(Tree* tree);
+
     TNode* getRoot();
 };

@@ -146,6 +146,56 @@ int Tree::breadth()
     return max;
 }
 
+bool Tree::isIdentical(Tree* tree)
+{
+    vector<vector<TNode*>> arr;
+
+    // arrs for both trees
+    arr.push_back(vector<TNode*>());
+    arr.push_back(vector<TNode*>());
+
+    // push roots to arrs
+    arr[0].push_back(this->root);
+    arr[1].push_back(tree->root);
+
+    // vars to store current nodes being checked
+    TNode* currNode1;
+    TNode* currNode2;
+
+    while (true) {
+        // get front of arrs
+        currNode1 = arr[0][0];
+        currNode2 = arr[1][0];
+
+        // check if they are equal
+        if (currNode1->elem != currNode2->elem)
+            return false;
+
+        // push children to arrs
+        if (currNode1->left != NULL)
+            arr[0].push_back(currNode1->left);
+        if (currNode1->right != NULL)
+            arr[0].push_back(currNode1->right);
+
+        if (currNode2->left != NULL)
+            arr[1].push_back(currNode2->left);
+        if (currNode2->right != NULL)
+            arr[1].push_back(currNode2->right);
+
+        // remove front of arrs
+        arr[0].erase(arr[0].begin());
+        arr[1].erase(arr[1].begin());
+
+        // check if arrs sizes are the same
+        if (arr[0].size() != arr[1].size())
+            return false;
+
+        // if both arrs are empty and this point has been reached, then the trees are identical
+        if (arr[0].size() == 0 && arr[1].size() == 0)
+            return true;
+    }
+}
+
 TNode* Tree::getRoot()
 {
     return root;

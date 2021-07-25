@@ -65,29 +65,21 @@ int main()
     cout << endl
          << endl;
     //tree.preOrder(tree.getRoot());
-    //tree.breadthFirst();
-    tree.postOrder(tree.getRoot());
+    tree.breadthFirst();
+    //tree.postOrder(tree.getRoot());
     //tree.inOrder(tree.getRoot());
     //cout << to_string(tree.depth(tree.getRoot())) << endl;
     //cout << "breadth: " << to_string(tree.breadth()) << endl
     //     << endl;
 
-    /*
-    TNode* n2 = new TNode(2);
-    TNode* n3 = new TNode(3);
-    TNode* n4 = new TNode(4);
-    TNode* n5 = new TNode(5);
-
-    tree.getRoot()->left = n2;
-    tree.getRoot()->left->left = n3;
-    tree.getRoot()->left->left->left = n4;
-    tree.getRoot()->left->left->right = n5;
-
-    tree.inOrder(tree.getRoot());
+    Tree tree2(arr, 8);
     cout << endl
          << endl;
-    cout << "breadth: " << to_string(tree.breadth()) << endl;
-    */
+    tree2.breadthFirst();
+
+    cout << endl
+         << endl;
+    cout << "Trees identical? : " << ((tree.isIdentical(&tree2)) ? "true" : "false") << endl;
 
     return 0;
 }
