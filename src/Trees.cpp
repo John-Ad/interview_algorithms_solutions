@@ -146,6 +146,23 @@ int Tree::breadth()
     return max;
 }
 
+int Tree::convertToSumTree(TNode* node)
+{
+    if (node == NULL) // return 0 if null
+        return 0;
+    if (node->left == NULL && node->right == NULL) // if no children, return nodes value
+        return node->elem;
+
+    // get sum of left and right subtrees
+    int sum1 = convertToSumTree(node->left);
+    int sum2 = convertToSumTree(node->right);
+
+    // set node value to sum of right and left subtrees
+    node->elem = sum1 + sum2;
+
+    return node->elem + sum1 + sum2;
+}
+
 bool Tree::isIdentical(Tree* tree)
 {
     vector<vector<TNode*>> arr;

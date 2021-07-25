@@ -35,7 +35,9 @@ public:
     int depth(TNode* node); // returns max depth
     int breadth();          // returns max breadth
 
-    bool isIdentical(Tree* tree);
+    int convertToSumTree(TNode* node); // set each nodes value to the sum of its right and left subtrees
 
-    TNode* getRoot();
+    bool isIdentical(Tree* tree); // check if 2 trees have the same data and structure
+
+    TNode* getRoot(); // return root of this tree
 };

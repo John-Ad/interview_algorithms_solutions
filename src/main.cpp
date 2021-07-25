@@ -61,9 +61,10 @@ int main()
     */
 
     int arr[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-    Tree tree(arr, 7);
+    Tree tree(arr, 15);
     cout << endl
          << endl;
+    tree.convertToSumTree(tree.getRoot());
     //tree.preOrder(tree.getRoot());
     tree.breadthFirst();
     //tree.postOrder(tree.getRoot());
@@ -72,6 +73,7 @@ int main()
     //cout << "breadth: " << to_string(tree.breadth()) << endl
     //     << endl;
 
+    /*
     Tree tree2(arr, 8);
     cout << endl
          << endl;
@@ -80,6 +82,7 @@ int main()
     cout << endl
          << endl;
     cout << "Trees identical? : " << ((tree.isIdentical(&tree2)) ? "true" : "false") << endl;
+    */
 
     return 0;
 }
