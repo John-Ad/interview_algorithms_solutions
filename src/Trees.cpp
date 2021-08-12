@@ -38,7 +38,7 @@ void Tree::populateLevelOrder(int* arr, int n)
                 }
                 nodeArr.push_back(node); // push new node to back of list
                 e = nodeArr.size();
-                cout << "node added:" << node->elem << endl;
+                //cout << "node added:" << node->elem << endl;
             }
         }
     }
@@ -161,6 +161,36 @@ int Tree::convertToSumTree(TNode* node)
     node->elem = sum1 + sum2;
 
     return node->elem + sum1 + sum2;
+}
+
+void Tree::invert(TNode* node)
+{
+    /*
+     *                  INVERT BINARY TREE:
+     *
+     *                  1                  1          breadthFirst output for inverted tree shoud be:
+     *              2      3     -->   3      2       1, 3, 2, 7, 6, 5, 4
+     *            4   5  6   7       7   6  5   4
+     *
+     *          The left and right nodes of each non leaf node will be swapped:
+     *
+     *          If current node is NULL or has no children, return;
+     *          Else, perform invert function on each child node.
+     *          Then swap the child nodes.
+     *
+     * */
+
+    if (node == NULL)
+        return;
+    if (node->left == NULL && node->right == NULL)
+        return;
+
+    invert(node->left);
+    invert(node->right);
+
+    TNode* temp = node->right;
+    node->right = node->left;
+    node->left = temp;
 }
 
 bool Tree::isIdentical(Tree* tree)

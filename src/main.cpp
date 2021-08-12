@@ -61,11 +61,15 @@ int main()
     */
 
     int arr[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-    Tree tree(arr, 15);
+    Tree tree(arr, 7);
     cout << endl
          << endl;
-    tree.convertToSumTree(tree.getRoot());
+    //tree.convertToSumTree(tree.getRoot());
     //tree.preOrder(tree.getRoot());
+    tree.breadthFirst();
+    cout << endl
+         << endl;
+    tree.invert(tree.getRoot());
     tree.breadthFirst();
     //tree.postOrder(tree.getRoot());
     //tree.inOrder(tree.getRoot());

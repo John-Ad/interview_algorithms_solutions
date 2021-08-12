@@ -36,6 +36,7 @@ public:
     int breadth();          // returns max breadth
 
     int convertToSumTree(TNode* node); // set each nodes value to the sum of its right and left subtrees
+    void invert(TNode* node);          // switch all child nodes of non leaf nodes
 
     bool isIdentical(Tree* tree); // check if 2 trees have the same data and structure
 
